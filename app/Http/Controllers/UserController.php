@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 class UserController extends Controller
 {
     /**
@@ -22,17 +24,26 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
 
         $request->validate([
 
             'Username'=>'required',
-            'Password'=>'required',
+            'password'=>'required',
             'Email'=>'required'
         ]);
+        if(User::where('Username' , '=', $request->only('Username'))->count() == 0){
 
-        return User::create($request->all());
+            $user=User::create($request->all());
+            $password=$request->only('password');
+            $user->setPasswordAttribute( reset($password));
+            return $user;
+        }
+
+        else
+            return 'USER EXIST';
     }
 
     /**

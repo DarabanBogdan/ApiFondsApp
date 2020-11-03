@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controller;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,6 +22,32 @@ Route::resource('Account','App\Http\Controllers\AccountController');
 
 
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+
+Route::middleware('auth')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+
+Route::post('/login',function (){
+
+    $pass=request()->only('Password');
+    $credential= array(
+        'Username' => request()->only('Username'),
+        'password' => reset($pass)
+    );
+
+    $token=Auth('api')->attempt($credential);
+
+
+    return $token;
+
+});
+
+Route::middleware('auth')->get('/login-test',function (){
+
+    $user=auth()->user();
+
+    return $user;
+
 });
