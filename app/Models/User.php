@@ -11,10 +11,10 @@ class User extends \Illuminate\Foundation\Auth\User implements JWTSubject
 {
     use HasFactory;
     protected $fillable=[
+        'Email',
         'Username',
         'Password',
-        'Email',
-        'Name'
+
 
     ];
     public function getJWTIdentifier()

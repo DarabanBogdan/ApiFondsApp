@@ -15,7 +15,6 @@ class UserController extends Controller
      */
     public function index()
     {
-        return User::all();
     }
 
     /**
@@ -30,8 +29,8 @@ class UserController extends Controller
 
         $request->validate([
 
-            'Username'=>'required',
-            'password'=>'required',
+            'Username'=>['required','unique:users'],
+            'Password'=>'required',
             'Email'=>'required'
         ]);
         if(User::where('Username' , '=', $request->only('Username'))->count() == 0){
@@ -79,7 +78,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        return User::destroy($id);
+
     }
 
 

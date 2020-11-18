@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controller;
 use App\Models\User;
+use App\Models\Account;
+use App\Models\Transaction;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,6 +20,7 @@ use App\Models\User;
 
 Route::resource('User','App\Http\Controllers\UserController');
 Route::resource('Account','App\Http\Controllers\AccountController');
+Route::resource('Transaction','App\Http\Controllers\TransactionController');
 
 
 
@@ -29,25 +32,43 @@ Route::middleware('auth')->get('/user', function (Request $request) {
 
 
 
-Route::post('/login',function (){
+Route::post('/User/login',function (){
 
     $pass=request()->only('Password');
     $credential= array(
-        'Username' => request()->only('Username'),
+        'Email' => request()->only('Email'),
         'password' => reset($pass)
     );
-
     $token=Auth('api')->attempt($credential);
-
 
     return $token;
 
 });
 
-Route::middleware('auth')->get('/login-test',function (){
+Route::middleware('auth')->get('/loginTest',function (){
 
     $user=auth()->user();
-
+    //$user
     return $user;
+
+});
+
+
+Route::get('/User/AllAccounts/{id}',function ($id){
+
+
+
+    return Account::where('UserId' , '=', $id)->get();
+
+});
+
+
+
+
+Route::get('Account/AllTransaction/{id}',function ($id){
+
+
+
+    return Transaction::where('AccountId' , '=', $id)->get();
 
 });
