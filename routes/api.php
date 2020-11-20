@@ -19,8 +19,8 @@ use App\Models\Transaction;
 
 
 Route::resource('User','App\Http\Controllers\UserController');
-Route::resource('Account','App\Http\Controllers\AccountController');
-Route::resource('Transaction','App\Http\Controllers\TransactionController');
+Route::middleware('auth')->resource('Account','App\Http\Controllers\AccountController');
+Route::middleware('auth')->resource('Transaction','App\Http\Controllers\TransactionController');
 
 
 
@@ -54,7 +54,7 @@ Route::middleware('auth')->get('/loginTest',function (){
 });
 
 
-Route::get('/User/AllAccounts/{id}',function ($id){
+Route::middleware('auth')->get('/User/AllAccounts/{id}',function ($id){
 
 
 
@@ -65,7 +65,7 @@ Route::get('/User/AllAccounts/{id}',function ($id){
 
 
 
-Route::get('Account/AllTransaction/{id}',function ($id){
+Route::middleware('auth')->get('Account/AllTransaction/{id}',function ($id){
 
 
 

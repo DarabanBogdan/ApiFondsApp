@@ -16,6 +16,8 @@ class AccountController extends Controller
     public function store(Request $request)
     {
 
+
+
         $request->validate([
 
             'Name'=>'required',
