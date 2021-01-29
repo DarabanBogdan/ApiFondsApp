@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaction;
+use App\Models\Account;
 class TransactionController extends Controller
 {
 
@@ -22,7 +23,18 @@ class TransactionController extends Controller
             'Sold'=>'required',
             'AccountId'=>'required'
         ]);
-        return Transaction::create($request->all());
+        $user=auth()->user();
+        $idUser=$user->id;
+        $accountsIds=Account::where('UserId' , '=', $idUser)->pluck('id')->toArray();
+        $id=$request->get('AccountId');
+        if(in_array($id, $accountsIds))
+         return response($transaction=Transaction::create($request->all()),201);
+        else return response("Acces Forbidden",403);
+
+
+
+
+
     }
 
 

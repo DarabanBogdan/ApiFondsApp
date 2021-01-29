@@ -40,7 +40,6 @@ Route::post('/User/login',function (){
         'password' => reset($pass)
     );
     $token=Auth('api')->attempt($credential);
-
     return $token;
 
 });
@@ -48,27 +47,28 @@ Route::post('/User/login',function (){
 Route::middleware('auth')->get('/loginTest',function (){
 
     $user=auth()->user();
-    //$user
     return $user;
 
 });
 
 
-Route::middleware('auth')->get('/User/AllAccounts/{id}',function ($id){
-
-
-
+Route::middleware('auth')->post('/User/AllAccounts',function (){
+    $user=auth()->user();
+    $id=$user->id;
     return Account::where('UserId' , '=', $id)->get();
-
 });
 
 
 
-
 Route::middleware('auth')->get('Account/AllTransaction/{id}',function ($id){
+    $user=auth()->user();
+    $idUser=$user->id;
+    $accountsIds=Account::where('UserId' , '=', $idUser)->pluck('id')->toArray();
+    if(in_array($id, $accountsIds))
+    {
+        return Transaction::where('AccountId' , '=', $id)->get();
 
-
-
-    return Transaction::where('AccountId' , '=', $id)->get();
+    }
+    else return response('Not Found', 404);
 
 });
