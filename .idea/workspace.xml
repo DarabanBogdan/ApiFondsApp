@@ -3,13 +3,28 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ffe177fc-eb11-41d0-a367-8327ed79871e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Account.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -217,20 +232,39 @@
       <workItem from="1611145960345" duration="214000" />
       <workItem from="1611493213473" duration="7925000" />
       <workItem from="1611772279759" duration="600000" />
+      <workItem from="1611937408880" duration="805000" />
+      <workItem from="1611957815324" duration="662000" />
+      <workItem from="1615226761937" duration="8000" />
+      <workItem from="1615227400728" duration="5374000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611495036379">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1611495036379" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1604279096265">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1615231507397">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1604279096265" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1615231507397" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615231502441">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1615231502441" />
   </component>
 </project>

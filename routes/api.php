@@ -30,10 +30,15 @@ Route::middleware('auth')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware('auth')->get('/TestApi', function () {
+    return "works";
+});
+
 
 
 Route::post('/User/login',function (){
 
+    /*
     $pass=request()->only('Password');
     $credential= array(
         'Email' => request()->only('Email'),
@@ -41,6 +46,8 @@ Route::post('/User/login',function (){
     );
     $token=Auth('api')->attempt($credential);
     return $token;
+    */
+    return "it worked";
 
 });
 
