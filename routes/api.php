@@ -30,24 +30,22 @@ Route::middleware('auth')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('auth')->get('/TestApi', function () {
-    return "works";
-});
+
 
 
 
 Route::post('/User/login',function (){
 
-    /*
     $pass=request()->only('Password');
     $credential= array(
         'Email' => request()->only('Email'),
         'password' => reset($pass)
     );
     $token=Auth('api')->attempt($credential);
+    if ($token!=null)
     return $token;
-    */
-    return "it worked";
+    else return response('Not Found user', 404);
+
 
 });
 

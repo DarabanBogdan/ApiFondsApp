@@ -17,7 +17,7 @@ class Transaction extends Model
     ];
 
     protected $cast=[
-        'Sold'=>'integer',
+        'Sold'=>'float',
         'AccountId'=>'integer'
 
     ];

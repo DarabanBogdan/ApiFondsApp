@@ -20,7 +20,7 @@ class Account extends Model
 
 
     protected $cast=[
-        'Sold'=>'integer',
+        'Sold'=>'float',
         'Debt'=>'boolean',
         'UserId'=>'integer'
 
